@@ -1,4 +1,4 @@
-COPY(SELECT XMLELEMENT(name warehouses, 
+COPY(SELECT XMLELEMENT(name warehouses,
 				XMLAGG(
 					XMLELEMENT(name warehouse, 
 						XMLELEMENT(name id, w.w_id),
@@ -6,14 +6,22 @@ COPY(SELECT XMLELEMENT(name warehouses,
                 		XMLELEMENT(name address, 
                 			XMLELEMENT(name street, w.w_street),
                 			XMLELEMENT(name city, w.w_city),
-                			XMLELEMENT(name country, w.w_country),
-                			XMLELEMENT(name stocks,
-                				XMLELEMENT(name itemId, s.i_id)
-                			)
+                			XMLELEMENT(name country, w.w_country)
+                		),
+                		XMLELEMENT(name items,
+                			(SELECT XMLAGG( 
+                				XMLELEMENT(name item, 
+                					XMLELEMENT(name id, i.i_id),
+                					XMLELEMENT(name im_id, i.i_im_id),
+                					XMLELEMENT(name name, i.i_name),
+                					XMLELEMENT(name price, i.i_price),
+                					XMLELEMENT(name quantity, s.s_qty)
+               					)
+               				)
+               				FROM stock s, item i
+               				WHERE s.w_id = w.w_id
+               				AND s.i_id = i.i_id)
                 		)
                 	)
-                )
-            )
-FROM warehouse w, stock s
-WHERE s.w_id = w.w_id
-AND w.w_id=22) TO '/media/sf_labs_shared_folder/project3/qn1.xml'
+                ))    
+FROM warehouse w) TO '/media/sf_labs_shared_folder/project3/qn1.xml'
