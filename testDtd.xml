@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE warehouses [
+<!ELEMENT warehouses (warehouse*)>
+<!ELEMENT warehouse(id,name,address)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address(street,city,country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+]>
