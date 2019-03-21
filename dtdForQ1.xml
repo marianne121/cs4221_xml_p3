@@ -1,0 +1,17 @@
+<!DOCTYPE warehouses [
+<!ELEMENT warehouses (warehouse*)>
+<!ELEMENT warehouse (id,name,address,items)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (street,city,country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT items (item*)>
+<!ELEMENT item (item_id,im_id,item_name,price,quantity)>
+<!ELEMENT item_id (#PCDATA)>
+<!ELEMENT im_id (#PCDATA)>
+<!ELEMENT item_name (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+]>
