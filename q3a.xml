@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<warehouses>
+  <warehouse>
+    <name>Namekagon</name>
+    <items/>
+  </warehouse>
+  <warehouse>
+    <name>Briar Crest</name>
+    <items>
+      <item>
+        <item_name>BABOR Baborganic Crystal Face Scrub</item_name>
+        <quantity>979</quantity>
+      </item>
+      <item>
+        <item_name>Amoxicillin</item_name>
+        <quantity>985</quantity>
+      </item>
+    </items>
+  </warehouse>
+</warehouses>
